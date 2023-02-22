@@ -1,0 +1,309 @@
+.filter form {
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-areas:
+      "price fieldsets"
+      "buttons buttons";
+    grid-template-columns: 230px 1fr;
+    column-gap: 17px;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.filter__fieldsets {
+  @media (min-width: $tablet-width) {
+    grid-area: fieldsets;
+    display: flex;
+    gap: 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.filter__price {
+  grid-area: price;
+  margin-bottom: 20px;
+  width: 280px;
+
+  @media (min-width: $tablet-width) {
+    width: 230px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 320px;
+    padding-bottom: 6px;
+  }
+}
+
+.filter__price-controls span {
+  display: flex;
+  align-items: center;
+}
+
+.filter__buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    gap: 30px;
+    position: relative;
+    right: 27px;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+    gap: 18px;
+    margin-right: auto;
+    right: 0;
+  }
+}
+
+.filter__title {
+  font: {
+    family: $montserrat-semi-bold;
+    size: 16px;
+    weight: 600;
+  }
+  line-height: 34px;
+  margin: 0;
+  padding: 0;
+}
+
+.filter__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+
+  @media (min-width: $tablet-width) {
+    grid-area: buttons;
+    margin-top: 20px;
+  }
+}
+
+.filter__btn {
+  width: 160px;
+  font: {
+    family: $montserrat-regular;
+    size: 14px;
+  }
+  line-height: 24px;
+  padding: 10px 9px;
+  border: none;
+  border-radius: 4px;
+  transition: 0.3s;
+
+  &--apply {
+    @media (min-width: $mobile-width) {
+      font: {
+        size: 13px;
+      }
+    }
+
+    @media (min-width: $tablet-width) {
+      font: {
+        size: 14px;
+      }
+      width: 149px;
+    }
+
+    color: $base_white;
+    background-color: $base_primary;
+    margin-bottom: 25px;
+
+    &:hover,
+    &:focus {
+      background-color: $primary_lighter;
+    }
+
+    &:active {
+      background-color: $primary_darker;
+    }
+
+    &:disabled {
+      background-color: $base_grey;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+  }
+
+  &--reset {
+    color: $base_primary;
+    background-color: $base_white;
+
+    @media (min-width: $tablet-width) {
+      width: 138px;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $primary_lighter;
+      color: $base_white;
+    }
+
+    &:active {
+      background-color: $primary_darker;
+      color: $base_white;
+    }
+
+    &:disabled {
+      background-color: $base_grey;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 8px 4px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 150px;
+  }
+}
+
+.filter__form fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.filter__price-controls {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 8px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-left: 0;
+  }
+}
+
+.filter__price-controls-input {
+  font: {
+    family: $montserrat-medium;
+    size: 16px;
+  }
+  line-height: 24px;
+  width: 103px;
+  color: $base_black;
+  border: 2px solid $primary_lighter;
+  border-radius: 4px;
+  padding: 5px 6px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    width: 77px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 120px;
+  }
+}
+
+.filter__price-controls-input--min {
+  &:focus {
+    border-color: $primary_darker;
+  }
+
+  &:disabled {
+    border-color: $light_grey;
+    background-color: $lightest_grey;
+    color: $base_grey;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-left: 8px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-left: 0;
+  }
+}
+
+.filter__price-controls-input--min::placeholder {
+  color: $base_grey;
+}
+
+.filter__range-controls {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 24px 0;
+
+  &:disabled {
+    color: $base_grey;
+  }
+}
+
+.filter__range-scale {
+  height: 5px;
+  background: $light_grey;
+}
+
+.filter__range-bar {
+  height: 5px;
+  right: 10%;
+  position: absolute;
+  background-color: $primary_lighter;
+}
+
+.filter__range-toggles {
+  position: relative;
+}
+
+.filter__range-toggles input {
+  position: absolute;
+  width: 98.7%;
+  height: 5px;
+  top: -7px;
+  background: none;
+  appearance: none;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 22px;
+  height: 22px;
+  border: 2px solid $primary_lighter;
+  border-radius: 50%;
+  appearance: none;
+  pointer-events: auto;
+  background-color: $base_white;
+
+  &::after:hover {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: $base_primary;
+  }
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border: 2px solid $primary_lighter;
+  border-radius: 50%;
+  appearance: none;
+  pointer-events: auto;
+  background-color: $base_white;
+}
+
+.filter__title .filter__title--country {
+  @media (min-width: $desktop-width) {
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,67 @@
+.sorting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+
+  @media (min-width: $tablet-width) {
+    justify-content: flex-end;
+    margin-top: 15px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 0;
+  }
+}
+
+.sorting__title {
+  font: {
+    family: $montserrat-semi-bold;
+    size: 16px;
+    weight: 600;
+  }
+  line-height: 24px;
+  padding-left: 4px;
+}
+
+.sorting__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 17px;
+}
+
+.sorting__select {
+  position: relative;
+}
+
+.sorting__select select {
+  display: block;
+  font: {
+    family: $montserrat-semi-bold;
+    size: 16px;
+  }
+  line-height: 24px;
+  padding: 4px 2px;
+  color: $base_primary;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  appearance: none;
+  background: url("../../img/svg/arrow-down.svg") no-repeat;
+  background-position: right 12px center;
+  background-color: $lightest_grey;
+  box-shadow: none;
+  flex: 1;
+
+  &:hover {
+    background-color: $lightest_violet;
+    border-radius: 4px;
+  }
+
+  &:active {
+    background-color: $base_white;
+  }
+}
